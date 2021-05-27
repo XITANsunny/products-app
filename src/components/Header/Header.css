@@ -1,0 +1,9 @@
+.shopLogo{
+    height: 20vh;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+}
+
+.sticky{
+    position: sticky;
+  }
