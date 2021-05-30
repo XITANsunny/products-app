@@ -11,7 +11,7 @@ beforeAll(async () => {
 
 describe('Integration test of the app', () => {
   test('Have some cards initially rendered', async () => {
-      const result = await page.$$('[data-componenttype="productCard"]');
+      const result = await page.$$('[data-component-type="productCard"]');
 
       expect(result.length > 0).toBeTruthy();
   }, TIMEOUT);
@@ -21,7 +21,7 @@ describe('Integration test of the app', () => {
     // Wait a while for filtering to work
     await page.waitForTimeout(200);
 
-    const result = await page.$$('[data-componenttype="productCard"]');
+    const result = await page.$$('[data-component-type="productCard"]');
     expect(result.length > 0).toBeTruthy();
 }, TIMEOUT);
 });

@@ -1,21 +1,36 @@
-.Card{
+.Card {
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  width: 15%;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+}
+
+.ProductCard {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ProductDetail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.img {
+  max-width: 100%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .Card {
     border: 1px solid #eee;
     box-shadow: 0 2px 2px #ccc;
-    width: 15%;
-    padding : 20px;
+    width: 90%;
+    padding: 20px;
     margin: 20px;
-    position:relative;
   }
-
-  @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 600px)
-  {
-    .Card{
-      border: 1px solid #eee;
-      box-shadow: 0 2px 2px #ccc;
-      width: 100%;
-      padding : 20px;
-      margin: 20px;
-    }
 }

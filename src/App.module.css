@@ -11,36 +11,6 @@
   align-items:center
 }
 
-.ProductCard{
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10vh;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.ProductDetail{
-  display: flex;
-  flex-direction:column;
-  flex-wrap: nowrap;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-
 @media only screen 
 and (min-device-width: 320px) 
 and (max-device-width: 600px)
@@ -49,6 +19,14 @@ and (max-device-width: 600px)
     padding: 4em 2em 5em 2em;
     display: flex;
     flex-direction: column;
+    margin-bottom: 2vh;
   }
 }
 
+.ProductCardsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}

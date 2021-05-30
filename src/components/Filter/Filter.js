@@ -1,5 +1,5 @@
 //import { useState } from 'react';
-import './Filter.module.css';
+import style from './Filter.module.css';
 
 
 const Filter = ({filterType, setFilterType,productTypes})=>{
@@ -9,7 +9,7 @@ const Filter = ({filterType, setFilterType,productTypes})=>{
 
     return (
         <form>
-            <label>Filter by</label>&nbsp;&nbsp;&nbsp;
+            <label className={style.FilterLabel}>Filter by</label>&nbsp;&nbsp;&nbsp;
             <select onChange = {handleChange} value={filterType}>
             {productTypes.map((ty, i)=>{return(<option value={ty} key={i}>{ty}</option>)})}
             </select>

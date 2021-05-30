@@ -5,7 +5,6 @@ import Card from "./components/Card/Card";
 import SearchBar from "./components/SearchBar/SerachBar";
 import { useState } from "react";
 import Filter from "./components/Filter/Filter";
-import Sale from "./components/Sale/Sale";
 import style from"./App.module.css";
 
 const PRODCUT_TYPE_ALL = "All";
@@ -44,23 +43,11 @@ function App() {
           productTypes={productTypes}
         />
       </div>
-      <div className={style.ProductCard}>
+      <div className={style.ProductCardsContainer}>
         {filteredProducts.length === 0 ? <div>Sorry, 0 results found for {searchTerm}</div>:<></>}
         {filteredProducts.map((product) => {
           return (
-            <Card key={product.index} type={product.type}>
-              <div className={style.ProductDetail}>
-                {product.isSale ? <Sale/> : null}
-                <img
-                  className={style.img}
-                  src={product.productImage}
-                  alt={`${product.productName} product`}
-                />
-                <div>
-                  {product.productName}
-                  <div>{product.price}</div>
-                </div>
-              </div>
+            <Card product={product} key={product.index} type={product.type}>
             </Card>
           );
         })}

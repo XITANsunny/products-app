@@ -1,5 +1,7 @@
 .SaleTag{
     position:absolute;
+    margin-top: -15px;
+    margin-left: -15px;
 }
 .SaleTag p{
     font-weight: bold;
