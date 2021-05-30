@@ -1,8 +1,21 @@
-.card{
+.Card{
     border: 1px solid #eee;
     box-shadow: 0 2px 2px #ccc;
-    width: 25%;
+    width: 15%;
     padding : 20px;
     margin: 20px;
-
+    position:relative;
   }
+
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 600px)
+  {
+    .Card{
+      border: 1px solid #eee;
+      box-shadow: 0 2px 2px #ccc;
+      width: 100%;
+      padding : 20px;
+      margin: 20px;
+    }
+}

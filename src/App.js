@@ -1,64 +1,70 @@
 import data from "./components/data/data.json";
-import Header from './components/Header/Header';
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Card from "./components/Card/Card";
-import './App.css';
 import SearchBar from "./components/SearchBar/SerachBar";
 import { useState } from "react";
 import Filter from "./components/Filter/Filter";
+import Sale from "./components/Sale/Sale";
+import "./App.css";
+
+const PRODCUT_TYPE_ALL = "All";
 
 const productInfo = data;
-
 function App() {
   console.log(productInfo);
   const [searchTerm, setSearchTerm] = useState("");
-  const filterProducts = (productInfo, searchTerm)=>{
-    if(!searchTerm){
-      return productInfo;
-    }
+  const [productType, setProductType] = useState(PRODCUT_TYPE_ALL);
 
-    return productInfo.filter((product)=>{
+  const filterProducts = (productInfo, searchTerm, productType) => {
+    return productInfo.filter((product) => {
+      if (!searchTerm) {
+        return true;
+      }
       const productName = product.productName.toLowerCase();
       return productName.includes(searchTerm);
+    }).filter(product => {
+      if (productType === PRODCUT_TYPE_ALL) {
+        return true;
+      }
+      return product.type === productType;
     });
   };
-  const filteredProducts = filterProducts(productInfo,searchTerm);
-  console.log(filteredProducts);
+  const filteredProducts = filterProducts(productInfo, searchTerm, productType);
+  const productTypes = [PRODCUT_TYPE_ALL].concat(Array.from(new Set(productInfo.map((p) => p.type))));
+  console.log(productType);
 
   return (
-    <div className="App">
-      <div className="headerContainer">
-        <Header/>
-        <SearchBar
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+    <div className={"App"}>
+      <div className={"HeaderContainer"}>
+        <Header />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Filter
+          filterType={productType}
+          setFilterType={setProductType}
+          productTypes={productTypes}
         />
-        <Filter/>
       </div>
-      
-      <div>
-      {filteredProducts.map((product)=>{
+      <div className={"ProductCard"}>
+        {filteredProducts.map((product) => {
           return (
-          <Card key={product.index} type={product.type} >
-            <div className="cardBody">
-            <img src={product.productImage} alt={`${product.productName} product`}/>
-            <div>
-              {product.productName}
-            <div>
-            {product.price}
-            </div>
-            <div>
-
-            </div>
-            </div>
-            
-            </div>
-          </Card>
-            )
-          
+            <Card key={product.index} type={product.type}>
+              <div className={"ProductDetail"}>
+                {product.isSale ? <Sale/> : null}
+                <img
+                  src={product.productImage}
+                  alt={`${product.productName} product`}
+                />
+                <div>
+                  {product.productName}
+                  <div>{product.price}</div>
+                </div>
+              </div>
+            </Card>
+          );
         })}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
