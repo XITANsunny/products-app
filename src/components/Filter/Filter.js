@@ -9,7 +9,7 @@ const Filter = ({filterType, setFilterType,productTypes})=>{
 
     return (
         <form>
-            <lable>Filter by</lable>
+            <lable>Filter by</lable>&nbsp;&nbsp;&nbsp;
             <select onChange = {handleChange} value={filterType}>
             {productTypes.map((ty)=>{return(<option value={ty} key={ty.index}>{ty}</option>)})}
             </select>
