@@ -9,9 +9,9 @@ const Filter = ({filterType, setFilterType,productTypes})=>{
 
     return (
         <form>
-            <lable>Filter by</lable>&nbsp;&nbsp;&nbsp;
+            <label>Filter by</label>&nbsp;&nbsp;&nbsp;
             <select onChange = {handleChange} value={filterType}>
-            {productTypes.map((ty)=>{return(<option value={ty} key={ty.index}>{ty}</option>)})}
+            {productTypes.map((ty, i)=>{return(<option value={ty} key={i}>{ty}</option>)})}
             </select>
         </form>
     );

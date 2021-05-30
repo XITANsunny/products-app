@@ -12,7 +12,6 @@ const PRODCUT_TYPE_ALL = "All";
 
 const productInfo = data;
 function App() {
-  console.log(productInfo);
   const [searchTerm, setSearchTerm] = useState("");
   const [productType, setProductType] = useState(PRODCUT_TYPE_ALL);
 
@@ -32,7 +31,7 @@ function App() {
   };
   const filteredProducts = filterProducts(productInfo, searchTerm, productType);
   const productTypes = [PRODCUT_TYPE_ALL].concat(Array.from(new Set(productInfo.map((p) => p.type))));
-  console.log(productType);
+
 
   return (
     <div className={style.App}>
@@ -46,6 +45,7 @@ function App() {
         />
       </div>
       <div className={style.ProductCard}>
+        {filteredProducts.length === 0 ? <div>Sorry, 0 results found for {searchTerm}</div>:<></>}
         {filteredProducts.map((product) => {
           return (
             <Card key={product.index} type={product.type}>
