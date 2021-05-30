@@ -6,11 +6,11 @@ const SearchBar = ({searchTerm, setSearchTerm})=>{
     const handleChange = event=>{
         setSearchTerm(event.target.value);
       }
-    return (<div>
+    return (<div className="SearchBar">
         <form action="/" method="get">
             <label htmlFor="header-search">
                 <span className="visually-hidden">
-                    Search product by name
+                    Search by name
                 </span>
             </label>
             <input
@@ -18,7 +18,7 @@ const SearchBar = ({searchTerm, setSearchTerm})=>{
                 onInput={e => setSearchTerm(e.target.value)}
                 type="text"
                 id="header-serach"
-                placeholder="Search product by name"
+                placeholder="Search by name"
                 onChange = {handleChange}
             />
             
