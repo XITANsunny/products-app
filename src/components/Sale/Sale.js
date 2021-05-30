@@ -1,8 +1,8 @@
-import './Sale.css';
+import style from'./Sale.module.css';
 
 const Sale = ()=>{
     return (
-        <div className="SaleTag">
+        <div className={style.SaleTag}>
             <p>Sale</p>
         </div>
     )

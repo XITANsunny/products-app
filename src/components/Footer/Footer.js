@@ -1,8 +1,8 @@
-import "./Footer.css";
+import style from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className={style.footer}>
       We take the Responsible Service of Alcohol seriously.
       <br />
       LIQUOR ACT 2007. It is against the law to sell or supply alcohol to, or to

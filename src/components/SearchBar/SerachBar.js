@@ -1,15 +1,15 @@
 import React from 'react';
-import './SearchBar.css';
+import style from './SearchBar.module.css';
 
 const SearchBar = ({searchTerm, setSearchTerm})=>{
 
     const handleChange = event=>{
         setSearchTerm(event.target.value);
       }
-    return (<div className="SearchBar">
+    return (<div className={style.SearchBar}>
         <form action="/" method="get">
             <label htmlFor="header-search">
-                <span className="visually-hidden">
+                <span className={style.VisuallyHidden}>
                     Search by name
                 </span>
             </label>

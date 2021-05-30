@@ -6,7 +6,7 @@ import SearchBar from "./components/SearchBar/SerachBar";
 import { useState } from "react";
 import Filter from "./components/Filter/Filter";
 import Sale from "./components/Sale/Sale";
-import "./App.css";
+import style from"./App.module.css";
 
 const PRODCUT_TYPE_ALL = "All";
 
@@ -35,8 +35,8 @@ function App() {
   console.log(productType);
 
   return (
-    <div className={"App"}>
-      <div className={"HeaderContainer"}>
+    <div className={style.App}>
+      <div className={style.HeaderContainer}>
         <Header />
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Filter
@@ -45,13 +45,14 @@ function App() {
           productTypes={productTypes}
         />
       </div>
-      <div className={"ProductCard"}>
+      <div className={style.ProductCard}>
         {filteredProducts.map((product) => {
           return (
             <Card key={product.index} type={product.type}>
-              <div className={"ProductDetail"}>
+              <div className={style.ProductDetail}>
                 {product.isSale ? <Sale/> : null}
                 <img
+                  className={style.img}
                   src={product.productImage}
                   alt={`${product.productName} product`}
                 />

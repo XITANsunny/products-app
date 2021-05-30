@@ -1,5 +1,5 @@
 //import { useState } from 'react';
-import './Filter.css';
+import './Filter.module.css';
 
 
 const Filter = ({filterType, setFilterType,productTypes})=>{

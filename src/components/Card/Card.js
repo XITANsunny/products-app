@@ -1,7 +1,7 @@
-import "./Card.css";
+import style from "./Card.module.css";
 export default function Card({children, className="",...props}){
     return(
-        <div className={`${className} Card`}
+        <div className={`${className} ${style.Card}`}
         {...props} >
             {children}
         </div>

@@ -1,10 +1,10 @@
 import logo from '../../assets/logo.svg';
-import './Header.css';
+import style from './Header.module.css';
 
 
 const Header =()=>{
     return (
-    <div className="shopLogo sticky"> 
+    <div className={style.shopLogo}> 
         <img src={logo} alt="bottle shop logo" />
     </div>)
 };

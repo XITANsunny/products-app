@@ -1,6 +1,7 @@
 .footer {
     left: 0;
     bottom: 0;
+    box-sizing: border-box;
     width: 100%;
     background-color: rgb(51, 50, 50);
     color: white;
@@ -8,4 +9,4 @@
     padding:1vh 5vh;
     margin-top: 30hv;
     position: fixed;
- }
+ } 
