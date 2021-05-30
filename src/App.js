@@ -21,7 +21,7 @@ function App() {
         return true;
       }
       const productName = product.productName.toLowerCase();
-      return productName.includes(searchTerm);
+      return productName.includes(searchTerm.toLowerCase());
     }).filter(product => {
       if (productType === PRODCUT_TYPE_ALL) {
         return true;
@@ -30,8 +30,8 @@ function App() {
     });
   };
   const filteredProducts = filterProducts(productInfo, searchTerm, productType);
-  const productTypes = [PRODCUT_TYPE_ALL].concat(Array.from(new Set(productInfo.map((p) => p.type))));
-
+  const productTypes = [PRODCUT_TYPE_ALL].concat(Array.from(new Set(productInfo.map((p) => p.type))))
+  console.log(filteredProducts.length)
 
   return (
     <div className={style.App}>
